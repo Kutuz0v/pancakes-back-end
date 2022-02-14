@@ -3,13 +3,13 @@ package ua.hurin.pancakes.service
 import ua.hurin.pancakes.dto.PancakeDto
 
 interface PancakeService {
-    fun createPancake(pancakeDto: PancakeDto): PancakeDto
+    fun create(pancakeDto: PancakeDto): PancakeDto
 
-    fun getPancake(id: Long): PancakeDto
+    fun get(id: Long): PancakeDto
 
-    fun getAllPancakes(): List<PancakeDto>
+    fun getAll(): List<PancakeDto>
 
-    fun updatePancake(id: Long, pancakeDto: PancakeDto): PancakeDto
+    fun update(id: Long, pancakeDto: PancakeDto): PancakeDto
 
-    fun deletePancake(id: Long)
+    fun delete(id: Long)
 }

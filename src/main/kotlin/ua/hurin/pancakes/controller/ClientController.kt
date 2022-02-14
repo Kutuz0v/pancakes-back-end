@@ -11,21 +11,21 @@ class ClientController(
 ) {
     @PostMapping
     fun create(@RequestBody clientDto: ClientDto): ClientDto =
-        service.createClient(clientDto)
+        service.create(clientDto)
 
-    @GetMapping("/{phoneNumber}")
-    fun getClient(@PathVariable phoneNumber: String) =
-        service.getClient(phoneNumber)
+    @GetMapping("/{id}")
+    fun getClient(@PathVariable id: Long) =
+        service.get(id)
 
     @GetMapping
     fun getAll(): List<ClientDto> =
-        service.getAllClients()
+        service.getAll()
 
-    @PutMapping("/{phoneNumber}")
-    fun update(@PathVariable phoneNumber: String, @RequestBody clientDto: ClientDto): ClientDto =
-        service.updateClient(phoneNumber, clientDto)
+    @PutMapping("/{id}")
+    fun update(@PathVariable id: Long, @RequestBody clientDto: ClientDto): ClientDto =
+        service.update(id, clientDto)
 
-    @DeleteMapping("/{phoneNumber}")
-    fun delete(@PathVariable phoneNumber: String) =
-        service.deleteClient(phoneNumber)
+    @DeleteMapping("/{id}")
+    fun delete(@PathVariable id: Long) =
+        service.delete(id)
 }

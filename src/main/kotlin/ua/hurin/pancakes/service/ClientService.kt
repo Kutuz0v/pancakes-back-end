@@ -4,13 +4,13 @@ import ua.hurin.pancakes.dto.ClientDto
 
 
 interface ClientService {
-    fun createClient(clientDto: ClientDto): ClientDto
+    fun create(clientDto: ClientDto): ClientDto
 
-    fun getClient(phoneNumber: String): ClientDto
+    fun get(id: Long): ClientDto
 
-    fun getAllClients(): List<ClientDto>
+    fun getAll(): List<ClientDto>
 
-    fun updateClient(phoneNumber: String, clientDto: ClientDto): ClientDto
+    fun update(id: Long, clientDto: ClientDto): ClientDto
 
-    fun deleteClient(phoneNumber: String)
+    fun delete(id: Long)
 }

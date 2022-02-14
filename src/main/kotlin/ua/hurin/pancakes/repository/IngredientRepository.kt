@@ -5,5 +5,4 @@ import org.springframework.stereotype.Repository
 import ua.hurin.pancakes.model.Ingredient
 
 @Repository
-interface IngredientRepository: CrudRepository<Ingredient, Long> {
-}
+interface IngredientRepository : CrudRepository<Ingredient, Long>

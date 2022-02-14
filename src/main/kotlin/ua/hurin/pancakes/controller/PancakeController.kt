@@ -12,24 +12,24 @@ class PancakeController(
 
     @PostMapping
     fun create(@RequestBody pancake: PancakeDto): PancakeDto =
-        service.createPancake(pancake)
+        service.create(pancake)
 
     @GetMapping("/{id}")
     fun getPancake(@PathVariable id: Long): PancakeDto =
-        service.getPancake(id)
+        service.get(id)
 
     @GetMapping
-    fun getAll(): List<PancakeDto> {
-        return service.getAllPancakes()
-    }
+    fun getAll(): List<PancakeDto> =
+        service.getAll()
 
     @PutMapping("/{id}")
     fun update(
         @PathVariable id: Long,
-        @RequestBody pancakeDto: PancakeDto): PancakeDto =
-        service.updatePancake(id, pancakeDto)
+        @RequestBody pancakeDto: PancakeDto
+    ): PancakeDto =
+        service.update(id, pancakeDto)
 
     @DeleteMapping("/{id}")
-    fun delete (@PathVariable id: Long) =
-        service.deletePancake(id)
+    fun delete(@PathVariable id: Long) =
+        service.delete(id)
 }
