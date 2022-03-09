@@ -11,7 +11,7 @@
 	<groupId>ua.hurin</groupId>
 	<artifactId>pancakes</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>pancakes</name>
 	<description>Project for Pancakes ordering</description>
 	<properties>
