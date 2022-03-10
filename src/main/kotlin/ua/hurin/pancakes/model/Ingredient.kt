@@ -11,7 +11,7 @@ import javax.persistence.Id
 data class Ingredient(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long = 0,
+    var id: Long,
 
     /** at Ukrainian */
     val value: String,
@@ -20,7 +20,11 @@ data class Ingredient(
     val weight: Int,
 
     /** in UAH */
-    val price: Int
+    val price: Int,
+
+    /*@ManyToMany(mappedBy = "ingredients")
+    @JsonIgnore
+    var pancakes: Set<Pancake> = mutableSetOf()*/
 ) {
 
     companion object {

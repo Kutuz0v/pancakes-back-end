@@ -2,6 +2,7 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:${DATABASE_URL}
+    host: ${HOST}
     username: ${DATABASE_USERNAME}
     password: ${DATABASE_PASSWORD}
   jpa:
@@ -12,4 +13,4 @@ spring:
         temp:
           use_jdbc_metadata_defaults: false
 server:
-  port: ${PORT:8080}
+  port: ${PORT}
