@@ -11,3 +11,5 @@ spring:
         show_sql: true
         temp:
           use_jdbc_metadata_defaults: false
+server:
+  port: ${PORT:8080}
