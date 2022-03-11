@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*
 import ua.hurin.pancakes.dto.ClientDto
 import ua.hurin.pancakes.service.ClientService
 
+@CrossOrigin
 @RestController
 @RequestMapping("/clients")
 class ClientController(

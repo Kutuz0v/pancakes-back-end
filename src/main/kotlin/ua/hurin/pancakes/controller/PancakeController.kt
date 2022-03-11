@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*
 import ua.hurin.pancakes.dto.PancakeDto
 import ua.hurin.pancakes.service.PancakeService
 
+@CrossOrigin
 @RestController
 @RequestMapping("/pancakes")
 class PancakeController(
