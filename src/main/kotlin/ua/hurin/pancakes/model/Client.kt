@@ -8,14 +8,14 @@ import javax.persistence.Id
 
 @Entity
 data class Client(
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0,
-    var name: String,
-    val phoneNumber: String
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        val id: Long = 0,
+        var name: String,
+        val phoneNumber: String
 ) {
     companion object {
         fun Client.toClientDto() =
-            ClientDto(id, name, phoneNumber)
+                ClientDto(id, name, phoneNumber)
     }
 }

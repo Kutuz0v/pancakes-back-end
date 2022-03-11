@@ -10,11 +10,11 @@ class ErrorHandler : ResponseEntityExceptionHandler() {
 
     @ExceptionHandler(BaseException::class)
     fun handleBaseException(exception: BaseException): ResponseEntity<ApiErrorBody> =
-        ResponseEntity(
-            ApiErrorBody(
-                errorCode = exception.errorCode,
-                message = exception.message
-            ),
-            exception.status
-        )
+            ResponseEntity(
+                    ApiErrorBody(
+                            errorCode = exception.errorCode,
+                            message = exception.message
+                    ),
+                    exception.status
+            )
 }

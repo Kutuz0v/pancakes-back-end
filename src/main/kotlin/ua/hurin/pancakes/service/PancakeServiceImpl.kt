@@ -9,38 +9,39 @@ import ua.hurin.pancakes.repository.PancakeRepository
 
 @Service
 class PancakeServiceImpl(
-    private val repository: PancakeRepository
+        private val repository: PancakeRepository
 ) : PancakeService {
 
     override fun create(pancakeDto: PancakeDto): PancakeDto =
-        savePancake(pancakeDto)
+            savePancake(pancakeDto)
 
     override fun get(id: Long): PancakeDto =
-        repository
-            .findById(id)
-            .orElseThrow(PancakeNotFoundException(id))
-            .toPancakeDto()
+            repository
+                    .findById(id)
+                    .orElseThrow(PancakeNotFoundException(id))
+                    .toPancakeDto()
 
     override fun getAll(): List<PancakeDto> =
-        repository.findAll()
-            .map {
-                it.toPancakeDto()
-            }
+            repository.findAll()
+                    .map {
+                        it.toPancakeDto()
+                    }
 
     override fun update(id: Long, pancakeDto: PancakeDto): PancakeDto =
-        if (repository.existsById(id))
-            savePancake(id, pancakeDto)
-        else throw PancakeNotFoundException(id)
+            if (repository.existsById(id))
+                savePancake(id, pancakeDto)
+            else throw PancakeNotFoundException(id)
 
     override fun delete(id: Long) =
-        repository.deleteById(id)
+            repository.deleteById(id)
 
     private fun savePancake(pancakeDto: PancakeDto): PancakeDto =
-        savePancake(0, pancakeDto)
+            savePancake(0, pancakeDto)
 
     private fun savePancake(id: Long, pancakeDto: PancakeDto): PancakeDto =
-        repository
-            .save(pancakeDto.toPancake(id))
-            .toPancakeDto()
+            repository
+
+                    .save(pancakeDto.toPancake(id))
+                    .toPancakeDto()
 
 }

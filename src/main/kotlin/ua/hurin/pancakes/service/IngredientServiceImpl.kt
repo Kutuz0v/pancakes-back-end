@@ -9,36 +9,36 @@ import ua.hurin.pancakes.repository.IngredientRepository
 
 @Service
 class IngredientServiceImpl(
-    val repository: IngredientRepository
+        val repository: IngredientRepository
 ) : IngredientService {
     override fun create(ingredientDto: IngredientDto): IngredientDto =
-        saveIngredient(ingredientDto)
+            saveIngredient(ingredientDto)
 
     override fun get(id: Long): IngredientDto =
-        repository
-            .findById(id).orElseThrow(IngredientNotFoundException(id))
-            .toIngredientDto()
+            repository
+                    .findById(id).orElseThrow(IngredientNotFoundException(id))
+                    .toIngredientDto()
 
     override fun getAll(): List<IngredientDto> =
-        repository.findAll()
-            .map { it.toIngredientDto() }
+            repository.findAll()
+                    .map { it.toIngredientDto() }
 
     override fun update(id: Long, ingredientDto: IngredientDto): IngredientDto =
-        if (repository.existsById(id))
-            saveIngredient(id, ingredientDto)
-        else throw IngredientNotFoundException(id)
+            if (repository.existsById(id))
+                saveIngredient(id, ingredientDto)
+            else throw IngredientNotFoundException(id)
 
     override fun delete(id: Long) =
-        if (repository.existsById(id))
-            repository.deleteById(id)
-        else throw IngredientNotFoundException(id)
+            if (repository.existsById(id))
+                repository.deleteById(id)
+            else throw IngredientNotFoundException(id)
 
     private fun saveIngredient(id: Long, ingredientDto: IngredientDto): IngredientDto =
-        repository
-            .save(ingredientDto.toIngredient(id))
-            .toIngredientDto()
+            repository
+                    .save(ingredientDto.toIngredient(id))
+                    .toIngredientDto()
 
 
     private fun saveIngredient(ingredientDto: IngredientDto): IngredientDto =
-        saveIngredient(0, ingredientDto)
+            saveIngredient(0, ingredientDto)
 }

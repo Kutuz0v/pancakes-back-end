@@ -9,26 +9,26 @@ import javax.persistence.Id
 
 @Entity
 data class Ingredient(
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long,
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        var id: Long,
 
-    /** at Ukrainian */
-    val value: String,
+        /** at Ukrainian */
+        val value: String,
 
-    /** in grams */
-    val weight: Int,
+        /** in grams */
+        val weight: Int,
 
-    /** in UAH */
-    val price: Int,
+        /** in UAH */
+        val price: Int,
 
-    /*@ManyToMany(mappedBy = "ingredients")
-    @JsonIgnore
-    var pancakes: Set<Pancake> = mutableSetOf()*/
+        /*@ManyToMany(mappedBy = "ingredients")
+        @JsonIgnore
+        var pancakes: Set<Pancake> = mutableSetOf()*/
 ) {
 
     companion object {
         fun Ingredient.toIngredientDto() =
-            IngredientDto(id, value, weight, price)
+                IngredientDto(id, value, weight, price)
     }
 }

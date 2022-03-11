@@ -7,25 +7,25 @@ import ua.hurin.pancakes.service.ClientService
 @RestController
 @RequestMapping("/clients")
 class ClientController(
-    val service: ClientService
+        val service: ClientService
 ) {
     @PostMapping
     fun create(@RequestBody clientDto: ClientDto): ClientDto =
-        service.create(clientDto)
+            service.create(clientDto)
 
     @GetMapping("/{id}")
     fun getClient(@PathVariable id: Long) =
-        service.get(id)
+            service.get(id)
 
     @GetMapping
     fun getAll(): List<ClientDto> =
-        service.getAll()
+            service.getAll()
 
     @PutMapping("/{id}")
     fun update(@PathVariable id: Long, @RequestBody clientDto: ClientDto): ClientDto =
-        service.update(id, clientDto)
+            service.update(id, clientDto)
 
     @DeleteMapping("/{id}")
     fun delete(@PathVariable id: Long) =
-        service.delete(id)
+            service.delete(id)
 }

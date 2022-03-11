@@ -3,9 +3,9 @@ package ua.hurin.pancakes.exception
 import org.springframework.http.HttpStatus
 
 open class NotFoundException : BaseException(
-    errorCode = "not.found",
-    message = "Entity not found",
-    status = HttpStatus.NOT_FOUND
+        errorCode = "not.found",
+        message = "Entity not found",
+        status = HttpStatus.NOT_FOUND
 )
 
 class ClientNotFoundException(val id: Long) : NotFoundException() {

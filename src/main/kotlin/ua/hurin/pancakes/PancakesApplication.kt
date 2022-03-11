@@ -7,6 +7,6 @@ import org.springframework.boot.runApplication
 class PancakesApplication
 
 fun main(args: Array<String>) {
-	runApplication<PancakesApplication>(*args)
+    runApplication<PancakesApplication>(*args)
 }
 
