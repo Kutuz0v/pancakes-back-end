@@ -1,5 +1,7 @@
 spring:
   datasource:
+    hikari:
+      maximum-pool-size: 5
     driver-class-name: org.postgresql.Driver
     url: jdbc:${DATABASE_URL}
     host: ${HOST}
